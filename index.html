@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url(https://img.freepik.com/free-photo/pastel-blue-vignette-concrete-textured-background_53876-102637.jpg?w=900&t=st=1690978338~exp=1690978938~hmac=5f45afeabeb37b0af3a436ef720f54f6bcc86b31a260f327aeb789bf303de832);
+    }
+
+    .screen {
+      margin: 5%;
+    }
+
+    .styleA {
+      margin: 1%;
+      padding: 1%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      font-size: x-large;
+    }
+
+    .digits {
+      width: 40px;
+      font-size: large;
+      border: 1px solid brown;
+      text-align: center;
+      padding: 10px;
+      background-color: aliceblue;
+      font-weight: bolder;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="text-align: center; color: black;">
+    <h3>Basic Project - 1</h3>
+    <h2>Calculator</h2>
+  </div>
+  <div style="width: 100%;">
+    <div style="float: left; width: 50%; padding: 3%;">
+      <div style="border: 1px solid blue; width: 75%; background-color: rgb(32, 29, 29);">
+        <!-- background-image: url(https://img.freepik.com/free-photo/palm-leaves-shadow-beige_53876-95504.jpg?w=740&t=st=1690977950~exp=1690978550~hmac=970d282a8cff374a691251633b8e61dfad2efa7da9d5520c7a5c3b8daaf08d63) -->
+        <div class="screen">
+          <form action="">
+            <input id="display" style="width: 100%;height: 50px; padding: 1%;border: 1px solid white;
+             font-size: larger; font-weight: bolder;outline: none;" readonly>
+          </form>
+        </div>
+        <div class="buttons screen" style="border: 1px solid white;">
+          <div class="row-1 styleA">
+            <button type="button" class="digits" onclick="input.value += '1'">1</button>
+            <button type="button" class="digits" onclick="input.value += '2'">2</button>
+            <button type="button" class="digits" onclick="input.value += '3'">3</button>
+            <button type="button" class="digits" onclick="input.value += '+'">+</button>
+          </div>
+          <div class="row-2 styleA">
+            <button type="button" class="digits" onclick="input.value += '4'">4</button>
+            <button type="button" class="digits" onclick="input.value += '5'">5</button>
+            <button type="button" class="digits" onclick="input.value += '6'">6</button>
+            <button type="button" class="digits" onclick="input.value += '-'">-</button>
+          </div>
+          <div class="row-3 styleA">
+            <button type="button" class="digits" onclick="input.value += '7'">7</button>
+            <button type="button" class="digits" onclick="input.value += '8'">8</button>
+            <button type="button" class="digits" onclick="input.value += '9'">9</button>
+            <button type="button" class="digits" onclick="input.value += '*'">*</button>
+          </div>
+          <div class="row-4 styleA">
+            <button type="button" class="digits" onclick="input.value +=  '/'">/</button>
+            <button type="button" class="digits" onclick="input.value +=  '0'">0</button>
+            <button type="button" class="digits" onclick="input.value +=  '%'">%</button>
+            <button type="button" class="digits" onclick="input.value = eval(input.value)">=</button>
+          </div>
+          <div class="row-5 styleA">
+            <button type="button" style="margin: 2px;" class="digits" onclick="input.value +=  '.'">.</button>
+            <button type="button" style="border: 1px solid brown;padding: 8px;margin: 2px; font-size:medium;"
+              onclick="input.value = ''">Reset</button>
+            <button type="button"
+              style="border: 1px solid brown;padding: 8px;margin: 2px; font-size:medium;" onclick="store()">Store</button>
+            <button type="button" style="border: 1px solid brown;padding: 8px;margin: 2px; font-size:medium;"
+              onclick="input.value = input.value.slice(0,-1)">Back</button>
+            <!-- <span style="border: 1px solid brown;padding: 4px 8px 4px 8px;"></span> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="float: left; width: 50%; padding: 3%;">
+      <div style="text-align: center;">
+        <h2>Stack</h2>
+        <div id="storage"></div>
+      </div>
+    </div>
+  </div>
+  <script src="./main.js"></script>
+</body>
+
+</html>
